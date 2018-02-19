@@ -9,15 +9,11 @@
 A Sinatra application written in Ruby and to practice learning PostgreSQL.
 
 #### Behavior
-1.
+1. Allow user to create and save a task list.
 
 ## Setup/Installation Requirements
 
 * Clone this repository
-* Open your terminal and cd into the home directory
-* In your terminal, install gems by typing: bundle install
-* In your terminal, run the app by typing: ruby app.rb
-* Open your browser and enter the url: localhost:4567
 
 ## Known Bugs
 
