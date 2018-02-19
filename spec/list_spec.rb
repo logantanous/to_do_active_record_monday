@@ -1,16 +1,4 @@
-require('rspec')
-require('pry')
-require('pg')
-require('list')
 require("spec_helper")
-
-DB = PG.connect({:dbname => 'to_do_test'})
-
-RSpec.configure do |config|
-  config.after(:each) do
-    DB.exec("DELETE FROM lists *;")
-  end
-end
 
 describe(List) do
   describe(".all") do
@@ -23,6 +11,22 @@ describe(List) do
     it("tells you its name") do
       list = List.new({:name => "Epicodus stuff", :id => nil})
       expect(list.name()).to(eq("Epicodus stuff"))
+    end
+  end
+
+  describe("#id") do
+    it("sets its ID when you save it") do
+      list = List.new({:name => "Epicodus stuff", :id => nil})
+      list.save()
+      expect(list.id()).to(be_an_instance_of(Integer)) # don't know what specific ID the database will assign it, so all we can do is check to make sure the ID is an Integer.
+    end
+  end
+
+  describe("#save") do
+    it("lets you save lists to the database") do
+      list = List.new({:name => "Epicodus stuff", :id => nil})
+      list.save()
+      expect(List.all()).to(eq([list]))
     end
   end
 

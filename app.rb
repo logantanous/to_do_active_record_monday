@@ -4,4 +4,4 @@ also_reload("lib/**/*.rb")
 require("./lib/task")
 require("pg")
 
-DB = PG.connect({:dbname => "to_do"}) #connect to non-test db
+DB = PG.connect({:dbname => "to_do"}) #connect to NON-TEST db

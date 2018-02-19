@@ -10,6 +10,7 @@ A Sinatra application written in Ruby and to practice learning PostgreSQL.
 
 #### Behavior
 1. Allow user to create and save a task list.
+2. Require that a task belong to a list and be initialized with the list ID.
 
 ## Setup/Installation Requirements
 

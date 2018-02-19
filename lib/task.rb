@@ -1,5 +1,5 @@
 class Task
-  attr_reader(:description, :list_id)
+  attr_reader(:description, :list_id) # added to task the id from list
 
   def initialize(attributes)
     @description = attributes[:description]
@@ -14,8 +14,10 @@ class Task
     returned_tasks = DB.exec("SELECT * FROM tasks;") # gem .exec method to select all tasks (i.e. columns)
     tasks = []
     returned_tasks.each() do |task|
-      description = task.fetch("description") #???
-      list_id = task.fetch("list_id").to_i() # The information comes out of the database as a string.
+      description = task.fetch("description")
+      list_id = task.fetch("list_id").to_i()
+      # creates a list id task belongs to
+      # The information comes out of the database as a string.
       tasks.push(Task.new({:description => description, :list_id => list_id}))
     end # converting SQL db to Ruby code so app can understand it
     tasks
