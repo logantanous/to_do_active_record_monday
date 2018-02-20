@@ -6,9 +6,9 @@ class Task
     @list_id = attributes[:list_id]
   end
 
-  def ==(another_task)
-    self.description().==(another_task.description())
-  end
+  # def ==(another_task)
+  #   self.description().==(another_task.description())
+  # end
 
   def self.all
     returned_tasks = DB.exec("SELECT * FROM tasks;") # gem .exec method to select all tasks (i.e. columns)
