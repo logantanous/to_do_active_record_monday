@@ -11,5 +11,8 @@ RSpec.configure do |config| # clear db between spec runs
     Task.all.each do |task|
       task.destroy
     end
+    List.all.each do |list|
+      list.destroy
+    end
   end
 end
