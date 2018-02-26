@@ -1,8 +1,9 @@
-source 'https://rubygems.org'
+source("https://rubygems.org")
 
-gem 'rspec'
-gem 'pry'
-gem 'sinatra'
-gem 'sinatra-contrib'
-gem 'capybara'
-gem 'pg'
+gem("pg")
+gem("rspec")
+gem("capybara")
+gem("sinatra")
+gem("sinatra-contrib", :require => "sinatra/reloader")
+gem("sinatra-activerecord")
+gem("rake")
